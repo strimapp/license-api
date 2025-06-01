@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: license-api
+    env: python
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    plan: free
+    envVars:
+      - key: DB_HOST
+        value: your-db-host
+      - key: DB_NAME
+        value: your-db-name
+      - key: DB_USER
+        value: your-db-username
+      - key: DB_PASS
+        value: your-db-password
+      - key: DB_PORT
+        value: "5432"
