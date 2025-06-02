@@ -1,0 +1,18 @@
+app = "license-api"
+
+[env]
+  DB_HOST = "containers-us-west-147.railway.app"
+  DB_NAME = "railway"
+  DB_USER = "postgres"
+  DB_PASS = "password123"
+  DB_PORT = "5432"
+
+[build]
+  builder = "Docker"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
